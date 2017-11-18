@@ -31,17 +31,17 @@ RUN dpkg --add-architecture i386 && \
 WORKDIR /opt
 
 # Gradle
-ENV GRADLE_HOME /opt/gradle
-ENV GRADLE_VERSION 4.1
-ENV GRADLE_HASH 3014f027ae08bf3d9f7360e4e4352e80
+# ENV GRADLE_HOME /opt/gradle
+# ENV GRADLE_VERSION 4.1
+# ENV GRADLE_HASH 3014f027ae08bf3d9f7360e4e4352e80
 
-ENV PATH $PATH:$GRADLE_HOME/bin
-RUN wget -q "https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" && \
-    echo "${GRADLE_HASH} gradle-${GRADLE_VERSION}-bin.zip" > gradle-${GRADLE_VERSION}-bin.zip.md5 && \
-    md5sum -c gradle-${GRADLE_VERSION}-bin.zip.md5 && \
-    unzip -q "gradle-${GRADLE_VERSION}-bin.zip" && \
-    ln -s "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}" && \
-    rm "gradle-${GRADLE_VERSION}-bin.zip"*
+# ENV PATH $PATH:$GRADLE_HOME/bin
+# RUN wget -q "https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" && \
+#     echo "${GRADLE_HASH} gradle-${GRADLE_VERSION}-bin.zip" > gradle-${GRADLE_VERSION}-bin.zip.md5 && \
+#     md5sum -c gradle-${GRADLE_VERSION}-bin.zip.md5 && \
+#     unzip -q "gradle-${GRADLE_VERSION}-bin.zip" && \
+#     ln -s "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}" && \
+#     rm "gradle-${GRADLE_VERSION}-bin.zip"*
 
 # Installs Android SDK
 RUN dpkg --add-architecture i386 && \
