@@ -97,7 +97,7 @@ WORKDIR "/tmp"
 RUN npm i -g --unsafe-perm cordova@${CORDOVA_VERSION}
 
 # 安装 ionic-----------------------------------------------------
-ENV IONIC_VERSION 3.18.0
+ENV IONIC_VERSION 3.19.0
 
 RUN apt-get update && \
     npm i -g --unsafe-perm ionic@${IONIC_VERSION} && \
