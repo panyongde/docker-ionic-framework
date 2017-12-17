@@ -77,7 +77,7 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;
 RUN $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
 
 # 安装 node ---------------------------------------------
-ENV NODEJS_VERSION=8.9.1 \
+ENV NODEJS_VERSION=8.9.3 \
     PATH=$PATH:/opt/node/bin
 
 WORKDIR "/opt/node"
@@ -87,7 +87,7 @@ RUN apt-get update && apt-get install -y curl ca-certificates --no-install-recom
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
-RUN npm install -g cnpm
+RUN npm install -g cnpm && nrm
 
 # 安装 cordova----------------------------------------------
 ENV CORDOVA_VERSION 7.1.0
