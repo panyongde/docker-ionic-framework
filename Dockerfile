@@ -87,7 +87,7 @@ RUN apt-get update && apt-get install -y curl ca-certificates --no-install-recom
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean
 
-RUN npm install -g cnpm && nrm
+RUN npm install -g cnpm
 
 # 安装 cordova----------------------------------------------
 ENV CORDOVA_VERSION 7.1.0
