@@ -41,6 +41,7 @@ RUN echo "memory_limit=-1" > /usr/local/etc/php/conf.d/memory-limit.ini
 RUN echo "zend.enable_gc=0" > /usr/local/etc/php/conf.d/disable-gc.ini
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# ----------------------------------
 
 # required to use add-apt-repository
 RUN buildDeps='software-properties-common'; \
